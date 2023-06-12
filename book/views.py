@@ -6,4 +6,7 @@ from django.http import HttpResponse
 
 # 定义视图函数
 def index(request):
-    return HttpResponse('OK!')
+
+    #准备上下文：定义在字典中（测试数据）
+    context = {'title': '测试模板数据'}
+    return render(request, 'Book/index.html', context)
